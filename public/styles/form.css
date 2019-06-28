@@ -1,0 +1,103 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+#myVideo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* -webkit-filter: contrast(); */
+    /* filter: contrast(1); */
+}
+
+.title-text {
+    font-size: 150px;
+    font-family: 'Satisfy', cursive;
+    color: white;
+    font-weight: 1000;
+}
+
+#title-box {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 50px;
+}
+
+.btn {
+    border-radius: 4px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .btn:hover span {
+    padding-right: 25px;
+  }
+  
+  .btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .footer_img {
+    position: absolute;
+    width: 100%;
+  }
+
+  .footer_btns {
+      position: relative;
+  }
+
+  .butn {
+    border: 2px solid orange;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 50px;
+    cursor: pointer;
+  }
+
+  .success {
+    border-color: #4CAF50;
+    color: green;
+  }
+  
+  .success:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .warning {
+    border-color: #ff9800;
+    color: orange;
+  }
+  
+  .warning:hover {
+    background: #ff9800;
+    color: white;
+  }

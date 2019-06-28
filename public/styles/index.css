@@ -1,0 +1,105 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+#myVideo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* -webkit-filter: contrast(); */
+    /* filter: contrast(1); */
+}
+
+.main {
+    position: relative;
+}
+
+
+.pic {
+    width: 100%;
+}
+
+.title-text {
+    font-size: 150px;
+    font-family: 'Satisfy', cursive;
+    color: white;
+    font-weight: 1000;
+}
+
+#title-box {
+    text-align: center;
+    
+}
+
+.titl_contain {
+    margin-top: 15px;
+}
+
+.display-text {
+    font-size: 100px;
+    font-family: 'Satisfy', cursive;
+    color: white;
+    font-weight: 1000;
+}
+
+.form-text {
+    font-size: 100px;
+    font-family: 'Satisfy', cursive;
+    color: white;
+    font-weight: 1000;
+}
+
+#pic1 {
+    position: relative;
+    opacity: 0.85;
+}
+
+#display {
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+#pic2 {
+    position: relative;
+    opacity: 0.85;
+}
+
+#pic1:hover {
+    opacity: 1;
+}
+
+#pic2:hover {
+    opacity: 1;
+}
+
+.page_desc {
+    color: white;
+    font-family: 'Satisfy', cursive;
+    font-size: 50px;
+}
+.img_btns {
+    margin-bottom:3%;
+}
+
+.pic {
+    filter: grayscale(60%) blur(0px);
+    transition: all 0.35s;
+}
+
+.pic:hover {
+    filter: grayscale(0%) blur(3px);
+}
+
