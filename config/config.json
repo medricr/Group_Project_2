@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
-    "database": "recipes_db",
+    "password": "mysql",
+    "database": "recipe_db",
     "host": "localhost",
     "dialect": "mysql",
     "port": 3307
