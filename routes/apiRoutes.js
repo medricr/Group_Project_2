@@ -4,6 +4,15 @@ var blobUtil = require("blob-util");
 module.exports = function (app) {
 
 
+app.get("/api/user/test", function(req,res){
+	if(req.user){
+		res.json(req.user)
+	}
+	else{
+		res.json("no user is signed in")
+	}
+})
+
 
   app.post("/submit/photo", function (req, res) {
 

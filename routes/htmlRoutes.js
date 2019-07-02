@@ -4,6 +4,8 @@ module.exports = function (app) {
 
   //this will render the home page
   app.get("/", function (_req, res) {
+
+	
     res.render("index");
   });
 
@@ -11,6 +13,17 @@ module.exports = function (app) {
   app.get("/form", function (_req, res) {
     res.render("form");
   });
+  app.get("/login", function (_req, res) {
+    res.render("login");
+  });
+  app.get("/signup", function (_req, res) {
+    res.render("signup");
+  });
+  app.get("/browse", function (_req, res) {
+	  res.render("display");
+  })
+
+
 
   // app.get("/display/:field/:mode", function (req, res) {
 
