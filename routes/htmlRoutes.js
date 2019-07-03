@@ -1,14 +1,15 @@
 var db = require("../models");
-var path = require("path");
 
 module.exports = function (app) {
 
+  //this will render the home page
   app.get("/", function (_req, res) {
-    res.sendFile(path.join(__dirname, "/../html/home.html"));
+    res.render("index");
   });
 
-  app.get("/post", function (_req, res) {
-    res.sendFile(path.join(__dirname, "/../html/post.html"));
+  //this will render the form page
+  app.get("/form", function (_req, res) {
+    res.render("form");
   });
 
   app.get("/display/:field/:mode", function (req, res) {
@@ -29,17 +30,15 @@ module.exports = function (app) {
 
       order: [
         [field, mode]
-      ]
+      ],
+      include: [db.Picture]
 
     }).then(function (recipes) {
+
       res.render("display", { recipes: recipes });
     });
 
 
   });
 
-  // Render 404 page for any unmatched routes
-  app.get("*", function (_req, res) {
-    res.render("404");
-  });
 };
