@@ -1,5 +1,17 @@
 {{#each recipes}}
 
-<h1>{{name}}</h1>
+<h1>Name: {{name}}</h1>
+
+<p>Rating: {{rating}}</p>
+
+<p>data: {{Picture.data}}</p>
+
+
+<p>steps: {{steps}}</p>
+
+
+<p>ingredients: {{ingredients}}</p>
+
+<img src={{Picture.data}} alt={{name}}>
 
 {{/each}}

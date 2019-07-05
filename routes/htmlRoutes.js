@@ -12,31 +12,33 @@ module.exports = function (app) {
     res.render("form");
   });
 
-  // app.get("/display/:field/:mode", function (req, res) {
+  app.get("/display/:field/:mode", function (req, res) {
 
-  //   var field = req.params.field;
-  //   var mode = req.params.mode;
+    var field = req.params.field;
+    var mode = req.params.mode;
 
-  //   //field is name of db field
-  //   //field is preferably 'name' or 'rating'
-  //   //mode is either ASC or DESC
+    //field is name of db field
+    //field is preferably 'name' or 'rating'
+    //mode is either ASC or DESC
 
-  //   if (!["name", "rating"].includes(field) ||
-  //     !["ASC", "DESC"].includes(mode)) {
-  //     return res.render("404");
-  //   }
+    if (!["name", "rating"].includes(field) ||
+      !["ASC", "DESC"].includes(mode)) {
+      return res.render("404");
+    }
 
-  //   db.Recipe.findAll({
+    db.Recipe.findAll({
 
-  //     order: [
-  //       [field, mode]
-  //     ]
+      order: [
+        [field, mode]
+      ],
+      include: [db.Picture]
 
-  //   }).then(function (recipes) {
-  //     res.render("display", { recipes: recipes });
-  //   });
+    }).then(function (recipes) {
+
+      res.render("display", { recipes: recipes });
+    });
 
 
-  // });
+  });
 
 };
