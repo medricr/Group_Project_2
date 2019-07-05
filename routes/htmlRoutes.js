@@ -11,6 +11,15 @@ module.exports = function (app) {
   app.get("/form", function (_req, res) {
     res.render("form");
   });
+  //this will render the form page
+  app.get("/display", function (_req, res) {
+    db.Pictures.find().then(function (data) {
+      res.render("display", { data: data });
+    })
+
+
+
+  });
 
   // app.get("/display/:field/:mode", function (req, res) {
 
