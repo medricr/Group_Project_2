@@ -14,7 +14,9 @@ module.exports = function(app) {
 	app.post("/api/signup", function(req, res){
 
 		db.User.create(req.body).then((data)=>{
-			res.redirect("/api/login");
+			console.log("user creasted");
+			// res.redirect("/login")
+			res.redirect(307, "/api/login");
 		})
 
 			// res.redirect(307, "/api/login")
@@ -31,7 +33,8 @@ module.exports = function(app) {
 
 	app.get("/login", function(req, res){
 		if(req.user) {
-			res.redirect("/members");
+			// console.log(req.user);
+			res.redirect("/");
 		}
 		res.render("login");
 	})

@@ -1,1 +1,1 @@
-use recepies_db;
+use recipes_db;

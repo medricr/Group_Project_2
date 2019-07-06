@@ -1,86 +1,40 @@
 
 
 $(document).ready(function () {
-    console.log("ready");
-
 
     //this is to test to get image data
-    $(".get-image-data").on("click", function () {
-        console.log("test");
-
-
-
-
-
-        var file = document.getElementById('inputGroupFile04').files[0];
-
-        //CONVERTS THE FILE INTO A BLOB THAT THE IMG HTML SRC TAG CAN READ
-        blobUtil.blobToDataURL(file).then(function (data) {
-            console.log(data);
-
-            var test = {
-                data: data
+    $("#submit").on("click", function () {
+        $.ajax({
+            method: "POST",
+            url: "/api/recipes",
+            data: {
+                name: $("#drink_name").val().trim(),
+                rating: 0,
+                steps: $("#steps").val().trim(),
+                ingredients: $("#ingredients").val().trim()
             }
-            $.ajax({
-                type: "POST",
-                url: "/submit/photo",
-                data: test,
-
-            }).then(function (data) {
-
-                console.log(data);
-
-                $(".img-holder").attr("src", data.data);
-
-            })
-
-
         })
+            .then(function (res) {
+				console.log(res);
+                var file = document.getElementById('inputGroupFile04').files[0];
 
+                //CONVERTS THE FILE INTO A BLOB THAT THE IMG HTML SRC TAG CAN READ
+                blobUtil.blobToDataURL(file).then(function (data) {
 
+                    var test = {
+                        data: data,
+                        recipe_id: res.id
+                    };
 
-
-
-
-
-
-
-
-
-
-
-        // console.log(test)
-
-
-        // test = atob(file);
-        // console.log(test)
-
-
-        // console.log(pictureData);
-
-
-
-        // var buff = btoa(pictureData);
-
-
-        // console.log(buff);
-
-
-
-
-
-        // $(".image-holder").attr("src", file);
-
-        // $.ajax({
-        //     type: "POST",
-
-        //     url: "/submit/photo",
-        //     data: pictureData,
-        // }).then(function (data) {
-        //     console.log(data);
-        // })
-
-
-
-    })
-})
+                    $.ajax({
+                        method: "POST",
+                        url: "/submit/photo",
+                        data: test
+                    }).then(function (data) {
+                        $(".img-holder").attr("src", data.data);
+                    });
+                });
+            });
+		$(".modal").show();
+    });
+});

@@ -56,6 +56,7 @@ $(document).ready(function(){
 			password: password
 		}).then(function(data){
 			console.log(data)
+			window.location.replace("/");
 		})
 
 	}
