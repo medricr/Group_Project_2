@@ -8,6 +8,7 @@ body, html {
     top: 0;
     left: 0;
     width: 100%;
+    z-index: -1;
     /* -webkit-filter: contrast(); */
     /* filter: contrast(1); */
 }
@@ -23,7 +24,7 @@ body, html {
 
 .title-text {
     font-size: 150px;
-    font-family: 'Satisfy', cursive;
+    font-family: 'Lobster', cursive;
     color: white;
     font-weight: 1000;
 }
@@ -39,14 +40,14 @@ body, html {
 
 .display-text {
     font-size: 100px;
-    font-family: 'Satisfy', cursive;
+    font-family: 'Lobster', cursive;
     color: white;
     font-weight: 1000;
 }
 
 .form-text {
     font-size: 100px;
-    font-family: 'Satisfy', cursive;
+    font-family: 'Lobster', cursive;
     color: white;
     font-weight: 1000;
 }
@@ -102,4 +103,28 @@ body, html {
 .pic:hover {
     filter: grayscale(0%) blur(3px);
 }
+
+#logo {
+    font-family: 'Satisfy', cursive;
+    color: white;
+    font-weight: 1000;
+    font-size: 120px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 20px;
+    
+}
+
+.link-logo {
+    font-family: 'Lobster', cursive;
+    font-weight: 1000;
+    font-size: 80px;
+    
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 
