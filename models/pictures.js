@@ -12,8 +12,16 @@ module.exports = (sequelize, Sequelize) => {
             get() {
                 return this.getDataValue('data').toString('utf8'); // or whatever encoding is right
             },
-        },
+        }
     });
+
+    Picture.associate = function (models) {
+        Picture.belongsTo(models.Recipe, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
 
     return Picture;
 }

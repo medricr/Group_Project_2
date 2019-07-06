@@ -12,19 +12,20 @@ module.exports = function (app) {
     db.Picture.create({
       type: "test",
       name: "test",
-      data: req.body.data
+      data: req.body.data,
+      RecipeId: req.body.recipe_id
     }).then(function (data) {
       res.json(data);
     })
 
 
-  })
+  });
 
   app.get("/photos", function (req, res) {
 
     db.Picture.findAll().then(function (data) {
 
-      //   // res.json(data[0].data);
+      //   res.json(data[0].data);
       //   blobUtil.arrayBufferToBlob(data[0].data, 'audio/mpeg').then(function (blob) {
       //     // success
       //   }).catch(function (err) {
@@ -33,7 +34,7 @@ module.exports = function (app) {
       // })
       res.json(data);
     })
-  })
+  });
 
 
 
@@ -61,7 +62,9 @@ module.exports = function (app) {
 
       order: [
         [field, mode]
-      ]
+      ],
+
+      include: [db.Picture]
 
     }).then(function (results) {
       res.json(results);

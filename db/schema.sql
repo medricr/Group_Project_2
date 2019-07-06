@@ -1,1 +1,1 @@
-use recepies_db;
+create database recipes_db;
