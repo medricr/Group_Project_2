@@ -23,7 +23,7 @@ body, html {
 }
 
 .title-text {
-    font-size: 150px;
+    font-size: 100px;
     font-family: 'Lobster', cursive;
     color: white;
     font-weight: 1000;
@@ -118,8 +118,8 @@ body, html {
 
 .link-logo {
     font-family: 'Lobster', cursive;
-    font-weight: 1000;
-    font-size: 80px;
+    font-weight: 100;
+    font-size: 40px;
     
     margin-top: 5px;
     margin-bottom: 5px;
