@@ -1,94 +1,26 @@
-<!DOCTYPE html>
-<html>
+{{!-- <video autoplay muted loop id="myVideo">
+        <source src="./images/170628_004.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+</video> --}}
 
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles/index.css" media="screen" title="no title" charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
-    <title>Browse Library</title>
-</head>
+{{#each recipes}}
+<div class="card">
+    <div class="card-header text-center">
+        <h1>{{name}}</h1>
+    </div>
+    <div class="card-body">
+        <img src={{Picture.data}} alt={{name}} style="height: 200px; width: 200px; float: left;">
 
-<body>
-    <style>
-        .card-img-top {
-            width: 25%;
-            height: 25%;
-            overflow: hidden;
-            display: block;
-            float: right;
-        }
-    </style>
+        <p>Rating: {{rating}}</p>
 
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">Browse Library</a>
-        <a href="#">Post a Drink</a>
-        <a href="#">Home Page</a>
-        <a href="#">Login</a>
-        <a href="#">Log Out</a>
-        <a href="#">Sign Up</a>
+
+        <p>steps: {{steps}}</p>
 
     </div>
 
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
-
-    <div class="container titl_contain">
-        <div class="row title">
-            <div class="col-lg-12" id="title-box">
-                <span class="title-text">
-                    The Drink List
-                </span>
-            </div>
-        </div>
-    </div>
+    <p>ingredients: {{ingredients}}</p>
 
 
-    {{#each recipes}}
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card text-white bg-warning mb-3" style="width: 100%">
-                    <img src="./images/drink.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <span class="drink_title">
-                            <h1> Drink Name: {{name}}</h1>
-                        </span>
-                        <span class="drink_title">
-                            <h2>Components:</h2>
-                        </span>
-                        <p>{{ingredients}}</p>
-                        <span class="drink_title">
-                            <h2>Steps</h2>
-                        </span>
-                        <p>{{steps}}</p>
-                    </div>
-
-                    {{#each data}}
-                    <img src={{data}} class="card-img-top" alt="...">
-                    {{/each}}
-                </div>
-            </div>
-        </div>
-    </div>
-    {{/each}}
-
-
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-    </script>
-
-
-    <script src="./js/form.js"></script>
-</body>
-
-</html>
+</div>
+</div>
+{{/each}}

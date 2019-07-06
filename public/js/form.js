@@ -15,6 +15,8 @@ $(document).ready(function () {
             }
         })
             .then(function (res) {
+				// console.log(res);
+				console.log("RECIPE CREATION PROMISE");
                 var file = document.getElementById('inputGroupFile04').files[0];
 
                 //CONVERTS THE FILE INTO A BLOB THAT THE IMG HTML SRC TAG CAN READ
@@ -34,5 +36,6 @@ $(document).ready(function () {
                     });
                 });
             });
+		$(".modal").show();
     });
 });
