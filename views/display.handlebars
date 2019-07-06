@@ -1,8 +1,16 @@
+
+	{{!-- <video autoplay muted loop id="myVideo">
+        <source src="./images/170628_004.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+</video> --}}
+
 {{#each recipes}}
-
-<h1>Name: {{name}}</h1>
-
-<p>Rating: {{rating}}</p>
+<div class="card">
+	<div class="card-header">
+		<h1>{{name}}</h1>
+	</div>
+	<div class="card-body">
+		<p>Rating: {{rating}}</p>
 
 <p>data: {{Picture.data}}</p>
 
@@ -13,5 +21,13 @@
 <p>ingredients: {{ingredients}}</p>
 
 <img src={{Picture.data}} alt={{name}}>
+	</div>
+</div>
 
-{{/each}}
+
+
+
+
+
+
+</body>
