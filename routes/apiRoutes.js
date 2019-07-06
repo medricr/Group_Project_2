@@ -18,6 +18,8 @@ module.exports = function (app) {
 
   app.post("/submit/photo", function (req, res) {
 
+
+
     db.Picture.create({
       type: "test",
       name: "test",
@@ -29,6 +31,21 @@ module.exports = function (app) {
 
 
   });
+
+
+  app.get("/photos", function (req, res) {
+
+    db.Picture.findAll().then(function (data) {
+
+      // res.json(data[0].data);
+      blobUtil.arrayBufferToBlob(data[0].data, 'audio/mpeg').then(function (blob) {
+        // success
+      }).catch(function (err) {
+        // error
+      });
+    })
+    res.json(data);
+  })
 
   app.get("/api/recipes", function (_req, res) {
     db.Recipe.findAll({}).then(function (results) {
@@ -76,6 +93,7 @@ module.exports = function (app) {
         res.json(results);
       });
     }
+
   });
 
   app.put("/api/recipes/:id/like", function (req, res) {

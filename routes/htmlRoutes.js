@@ -4,18 +4,18 @@ module.exports = function (app) {
   //this will render the home page
   app.get("/", function (_req, res) {
 
-	
+
     res.render("index");
   });
 
   //this will render the form page
   app.get("/form", function (_req, res) {
-	if(_req.user == undefined){
-		res.render("login");
-	}
-	else{
-		res.render("form");
-	}
+    if (_req.user == undefined) {
+      res.render("login");
+    }
+    else {
+      res.render("form");
+    }
     // res.render("form");
   });
   app.get("/login", function (_req, res) {
@@ -25,11 +25,11 @@ module.exports = function (app) {
     res.render("signup");
   });
   app.get("/browse", function (_req, res) {
-	  db.Recipe.findAll({
+    db.Recipe.findAll({
 
-    //   order: [
-    //     [field, mode]
-    //   ],
+      //   order: [
+      //     [field, mode]
+      //   ],
       include: [db.Picture]
 
     }).then(function (recipes) {
@@ -37,9 +37,9 @@ module.exports = function (app) {
       res.render("display", { recipes: recipes });
     });
 
-	// db.Picture.findAll().then(function(data){
-	// 	res.render("display", {data: data})
-	// })
+    // db.Picture.findAll().then(function(data){
+    // 	res.render("display", {data: data})
+    // })
   })
 
 
@@ -66,6 +66,7 @@ module.exports = function (app) {
       include: [db.Picture]
 
     }).then(function (recipes) {
+      console.log(recipes[0]);
 
       res.render("display", { recipes: recipes });
     });
