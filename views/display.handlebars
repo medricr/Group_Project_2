@@ -3,6 +3,27 @@
         Your browser does not support HTML5 video.
 </video> --}}
 
+<style>
+    .background-image {
+        position: fixed;
+    }
+
+    .card {
+        position: relative;
+        color: purple;
+        width: 50%;
+        opacity: .7;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+</style>
+
+<div class="background-image">
+    <img src="https://images.unsplash.com/photo-1509807995916-c332365e2d9e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&dl=moss-iRF0psyhz10-unsplash.jpg"
+        style: width="100%" height="100%">
+</div>
+
+
+
 {{#each recipes}}
 <div class="card">
     <div class="card-header text-center">
@@ -17,15 +38,15 @@
         <p>steps: {{steps}}</p>
 
 
-    <p>ingredients: {{ingredients}}</p>
+        <p>ingredients: {{ingredients}}</p>
 
 
 
 
-		<button data-recipe-id={{id}} class="like btn btn-primary">Like</button>
+        <button data-recipe-id={{id}} class="like btn btn-primary">Like</button>
 
 
-	</div>
+    </div>
 
 </div>
 {{/each}}
