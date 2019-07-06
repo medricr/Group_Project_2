@@ -18,8 +18,8 @@ module.exports = function (app) {
 
   app.post("/submit/photo", function (req, res) {
 
-    console.log("\n\n\n\n\n\n\n" + req.body.data)
-    console.log("photo submit fire");
+
+
     db.Picture.create({
       type: "test",
       name: "test",
@@ -31,6 +31,7 @@ module.exports = function (app) {
 
 
   });
+
 
   app.get("/photos", function (req, res) {
 
@@ -45,9 +46,6 @@ module.exports = function (app) {
     })
     res.json(data);
   })
-
-
-
 
   app.get("/api/recipes", function (_req, res) {
     db.Recipe.findAll({}).then(function (results) {
@@ -95,14 +93,10 @@ module.exports = function (app) {
         res.json(results);
       });
     }
-    // db.Recipe.create(req.body).then(function (results) {
-    // //   res.json(results);
-    // });
+
   });
 
-  app.put("/api/recipes/:id", function (req, res) {
-
-    var rating = parseInt(req.body.rating);
+  app.put("/api/recipes/:id/like", function (req, res) {
 
     var recipeId = parseInt(req.params.id);
 
@@ -112,21 +106,20 @@ module.exports = function (app) {
 
     db.Recipe.findOne({
       where: { id: recipeId }
-    })
-      .then(function (results) {
+    }).then(function (results) {
 
-        if (!results) {
-          return res.render("404");
-        }
+      if (!results) {
+        return res.render("404");
+      }
 
-        db.Recipe.update(
-          { rating: results.rating + rating },
-          { where: { id: recipeId } },
-        )
-          .then(function (updateResults) {
-            res.json(updateResults);
-          });
-      });
+      db.Recipe.update(
+        { rating: results.rating + 1 },
+        { where: { id: recipeId } },
+      )
+        .then(function (updateResults) {
+          res.json(updateResults);
+        });
+    });
   });
 
   app.delete("/api/recipes/:id", function (req, res) {

@@ -5,7 +5,9 @@
     "database": "recipes_db",
     "host": "localhost",
     "dialect": "mysql",
-    "port": 3306
+
+    "port": 3307
+
   },
   "test": {
     "username": "root",
