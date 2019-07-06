@@ -6,28 +6,24 @@
 
 {{#each recipes}}
 <div class="card">
-	<div class="card-header">
+	<div class="card-header text-center">
 		<h1>{{name}}</h1>
 	</div>
 	<div class="card-body">
+		<img src={{Picture.data}} alt={{name}} style="height: 200px; width: 200px; float: left;">
+
 		<p>Rating: {{rating}}</p>
 
-<p>data: {{Picture.data}}</p>
+
+		<p>steps: {{steps}}</p>
 
 
-<p>steps: {{steps}}</p>
+		<p>ingredients: {{ingredients}}</p>
 
-
-<p>ingredients: {{ingredients}}</p>
-
-<img src={{Picture.data}} alt={{name}}>
+		
 	</div>
 </div>
+{{/each}}
 
 
 
-
-
-
-
-</body>

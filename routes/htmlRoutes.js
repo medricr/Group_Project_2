@@ -30,7 +30,7 @@ module.exports = function (app) {
     //   order: [
     //     [field, mode]
     //   ],
-    //   include: [db.Picture]
+      include: [db.Picture]
 
     }).then(function (recipes) {
 

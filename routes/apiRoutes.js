@@ -7,19 +7,19 @@ module.exports = function (app) {
 app.get("/api/user/test", function(req,res){
 	if(req.user){
 		res.json(req.user)
-		return true;
+		// return true;
 	}
 	else{
 		res.json("no user is signed in")
-		return false;
+		// return false;
 	}
 })
 
 
   app.post("/submit/photo", function (req, res) {
 
-    // console.log("\n\n\n\n\n\n\n" + req.body.data)
-
+    console.log("\n\n\n\n\n\n\n" + req.body.data)
+	console.log("photo submit fire");
     db.Picture.create({
       type: "test",
       name: "test",
@@ -36,16 +36,16 @@ app.get("/api/user/test", function(req,res){
 
     db.Picture.findAll().then(function (data) {
 
-      //   // res.json(data[0].data);
-      //   blobUtil.arrayBufferToBlob(data[0].data, 'audio/mpeg').then(function (blob) {
-      //     // success
-      //   }).catch(function (err) {
-      //     // error
-      //   });
-      // })
+        // res.json(data[0].data);
+        blobUtil.arrayBufferToBlob(data[0].data, 'audio/mpeg').then(function (blob) {
+          // success
+        }).catch(function (err) {
+          // error
+        });
+      })
       res.json(data);
     })
-  });
+
 
 
 
@@ -85,14 +85,14 @@ app.get("/api/user/test", function(req,res){
 
   app.post("/api/recipes", function (req, res) {
 	// console.log(req);
-	console.log(req.user);
+	// console.log(req.user);
 	if(req.user == undefined){
 		console.log("you must be signed in to post");
 		return;
 	}
 	else{
 		db.Recipe.create(req.body).then(function (results) {
-    //   res.json(results);
+      res.json(results);
     });
 	}
     // db.Recipe.create(req.body).then(function (results) {
