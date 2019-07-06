@@ -16,9 +16,9 @@
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
-	.body {
-		align-content: center;
-	}
+    .body {
+        align-content: center;
+    }
 </style>
 
 <div class="background-image">
@@ -66,26 +66,27 @@
 {{#each recipes}}
 <div class="card">
     <div class="card-header text-center">
-        <h1>{{name}}</h1>
+        <h1><strong>{{name}}</strong></h1>
     </div>
     <div class="card-body">
-        <img src={{Picture.data}} alt={{name}} style="height: 200px; width: 200px; float: left;">
+        <img src={{Picture.data}} alt={{name}} style="height: 200px; width: 200px; float: left; margin: 5px">
 
-        <p>Rating: {{rating}}</p>
-
-
-        <p>steps: {{steps}}</p>
+        <p>Rating: +{{rating}}</p>
 
 
-        <p>ingredients: {{ingredients}}</p>
+        <p>Steps: {{steps}}</p>
+
+
+        <p>Ingredients: {{ingredients}}</p>
 
 
 
 
-        <button data-recipe-id={{id}} class="like btn btn-primary">Like</button>
+        <button data-recipe-id={{id}} class="like btn btn-primary" style="float: right">Like</button>
 
 
     </div>
 
 </div>
+<br>
 {{/each}}
