@@ -18,8 +18,6 @@ module.exports = function (app) {
 
   app.post("/submit/photo", function (req, res) {
 
-
-
     db.Picture.create({
       type: "test",
       name: "test",
@@ -28,8 +26,6 @@ module.exports = function (app) {
     }).then(function (data) {
       res.json(data);
     })
-
-
   });
 
 
@@ -82,8 +78,7 @@ module.exports = function (app) {
   });
 
   app.post("/api/recipes", function (req, res) {
-    // console.log(req);
-    // console.log(req.user);
+    // Check if there is a user signed in before creating the entry
     if (req.user == undefined) {
       console.log("you must be signed in to post");
       return;
